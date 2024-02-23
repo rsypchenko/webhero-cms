@@ -426,7 +426,7 @@ export interface ApiTopicTopic extends Schema.CollectionType {
   info: {
     singularName: 'topic';
     pluralName: 'topics';
-    displayName: 'collection';
+    displayName: 'topic';
     description: '';
   };
   options: {
