@@ -380,22 +380,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     title: Attribute.String;
     description: Attribute.Text;
     created: Attribute.Date;
-    tags: Attribute.Enumeration<
-      [
-        'javascript',
-        'go',
-        'rust',
-        'react',
-        'java',
-        'python',
-        'system design',
-        'api',
-        'nodejs',
-        'web development',
-        'career',
-        'software development'
-      ]
-    >;
     image: Attribute.Media;
     media: Attribute.Media;
     collection: Attribute.Relation<

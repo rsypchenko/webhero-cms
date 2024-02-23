@@ -30,23 +30,6 @@
     "created": {
       "type": "date"
     },
-    "tags": {
-      "type": "enumeration",
-      "enum": [
-        "javascript",
-        "go",
-        "rust",
-        "react",
-        "java",
-        "python",
-        "system design",
-        "api",
-        "nodejs",
-        "web development",
-        "career",
-        "software development"
-      ]
-    },
     "image": {
       "type": "media",
       "multiple": false,
