@@ -29,11 +29,11 @@
         "audios"
       ]
     },
-    "articles": {
+    "article": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::article.article",
-      "mappedBy": "collection"
+      "inversedBy": "collections"
     }
   }
 }

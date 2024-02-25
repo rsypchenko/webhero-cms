@@ -52,16 +52,16 @@
         "audios"
       ]
     },
-    "collection": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::topic.topic",
-      "inversedBy": "articles"
-    },
     "tags": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::tag.tag",
+      "mappedBy": "articles"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::topic.topic",
       "mappedBy": "article"
     }
   }

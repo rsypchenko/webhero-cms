@@ -801,15 +801,15 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     created: Attribute.Date;
     cover: Attribute.Media;
     media: Attribute.Media;
-    collection: Attribute.Relation<
-      'api::article.article',
-      'manyToOne',
-      'api::topic.topic'
-    >;
     tags: Attribute.Relation<
       'api::article.article',
-      'oneToMany',
+      'manyToMany',
       'api::tag.tag'
+    >;
+    collections: Attribute.Relation<
+      'api::article.article',
+      'oneToMany',
+      'api::topic.topic'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -835,15 +835,16 @@ export interface ApiTagTag extends Schema.CollectionType {
     singularName: 'tag';
     pluralName: 'tags';
     displayName: 'tag';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String;
-    article: Attribute.Relation<
+    articles: Attribute.Relation<
       'api::tag.tag',
-      'manyToOne',
+      'manyToMany',
       'api::article.article'
     >;
     createdAt: Attribute.DateTime;
@@ -871,9 +872,9 @@ export interface ApiTopicTopic extends Schema.CollectionType {
     title: Attribute.String;
     description: Attribute.Text;
     image: Attribute.Media;
-    articles: Attribute.Relation<
+    article: Attribute.Relation<
       'api::topic.topic',
-      'oneToMany',
+      'manyToOne',
       'api::article.article'
     >;
     createdAt: Attribute.DateTime;
