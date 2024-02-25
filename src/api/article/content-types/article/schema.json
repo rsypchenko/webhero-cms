@@ -30,7 +30,7 @@
     "created": {
       "type": "date"
     },
-    "image": {
+    "cover": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -57,6 +57,12 @@
       "relation": "manyToOne",
       "target": "api::topic.topic",
       "inversedBy": "articles"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "article"
     }
   }
 }
